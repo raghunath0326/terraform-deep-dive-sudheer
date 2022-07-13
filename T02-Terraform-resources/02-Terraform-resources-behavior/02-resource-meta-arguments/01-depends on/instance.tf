@@ -6,9 +6,9 @@ resource "aws_instance" "web" {
   vpc_security_group_ids = [aws_security_group.test-security-group.id]
   user_data = file("nginx-install.sh")
   availability_zone = "us-east-1a"
-  associate_public_ip_address = false
+  associate_public_ip_address = true
 
   tags = {
     "Name" = "WebApp-terraform"
   }
-}
+} 
